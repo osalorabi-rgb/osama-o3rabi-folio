@@ -6,7 +6,7 @@ const About = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <ScrollAnimation>
-            <h2 className="text-5xl md:text-6xl font-display mb-12 text-foreground">
+            <h2 className="text-5xl md:text-6xl font-inter font-bold mb-12 text-foreground">
               INTRO
             </h2>
           </ScrollAnimation>
