@@ -27,27 +27,9 @@ const Hero = () => {
           Osama Orabi
         </h1>
         
-        <p className="text-2xl md:text-3xl text-white/90 font-light tracking-wider mb-12">
+        <p className="text-2xl md:text-3xl text-white/90 font-light tracking-wider">
           Entrepreneur & Content Creator
         </p>
-
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <Button
-            size="lg"
-            onClick={() => scrollToSection("work")}
-            className="bg-white text-background hover:bg-white/90 font-semibold px-10 py-6 text-lg transition-all hover-lift"
-          >
-            View My Work
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            onClick={() => scrollToSection("contact")}
-            className="border-2 border-white text-white hover:bg-white hover:text-background font-semibold px-10 py-6 text-lg transition-all hover-lift"
-          >
-            Get In Touch
-          </Button>
-        </div>
       </div>
 
       {/* Scroll indicator */}
