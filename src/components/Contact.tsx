@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Instagram, Linkedin, Twitter, Youtube, Facebook } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import ScrollAnimation from "./ScrollAnimation";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -26,13 +27,16 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 bg-background">
+    <section id="contact" className="py-16 px-6 bg-background scroll-animate">
       <div className="container mx-auto max-w-3xl">
-        <div className="text-center mb-16 fade-in">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-8">Contact</h2>
-        </div>
+        <ScrollAnimation>
+          <div className="text-center mb-16 fade-in">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-8">CONTACT</h2>
+          </div>
+        </ScrollAnimation>
 
-        <div className="space-y-8 fade-in-delay-1">
+        <ScrollAnimation delay={0.2}>
+          <div className="space-y-8 fade-in-delay-1">
           {/* Contact Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
@@ -136,7 +140,8 @@ const Contact = () => {
               </a>
             </div>
           </div>
-        </div>
+          </div>
+        </ScrollAnimation>
       </div>
     </section>
   );

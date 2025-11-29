@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import profileImage from "@/assets/profile.jpg";
+import ScrollAnimation from "./ScrollAnimation";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -22,15 +23,17 @@ const Hero = () => {
       }}
     >
       {/* Content */}
-      <div className="container mx-auto px-6 text-center relative z-10 fade-in">
-        <h1 className="text-7xl md:text-9xl font-display font-bold text-white mb-8 tracking-tight" style={{ fontStyle: 'italic' }}>
-          Osama Orabi
-        </h1>
-        
-        <p className="text-2xl md:text-3xl text-white/90 font-light tracking-wider">
-          Entrepreneur & Content Creator
-        </p>
-      </div>
+      <ScrollAnimation>
+        <div className="container mx-auto px-6 text-center relative z-10 fade-in">
+          <h1 className="text-7xl md:text-9xl font-display font-bold text-white mb-8 tracking-tight" style={{ fontStyle: 'italic' }}>
+            Osama Orabi
+          </h1>
+          
+          <p className="text-2xl md:text-3xl text-white/90 font-light tracking-wider">
+            Entrepreneur & Content Creator
+          </p>
+        </div>
+      </ScrollAnimation>
 
       {/* Scroll indicator */}
       <div 

@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import ScrollAnimation from "./ScrollAnimation";
 import clothingBrand from "@/assets/ajjad-running.jpg";
 import musicLabel from "@/assets/princestory-logo.jpg";
 import onCamera from "@/assets/on-camera.jpg";
@@ -37,26 +38,28 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="work" className="py-24 px-6 bg-background">
+    <section id="work" className="py-16 px-6 bg-background scroll-animate">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-20 fade-in">
-          <h2 className="text-5xl md:text-6xl font-display font-bold mb-4">Projects</h2>
-          <div className="h-0.5 w-24 bg-foreground mx-auto mb-6"></div>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A collection of projects and ventures across fashion, music, media, and digital content.
-          </p>
-        </div>
+        <ScrollAnimation>
+          <div className="text-center mb-20 fade-in">
+            <h2 className="text-5xl md:text-6xl font-display font-bold mb-4">PROJECTS</h2>
+            <div className="h-0.5 w-24 bg-foreground mx-auto mb-6"></div>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              A collection of projects and ventures across fashion, music, media, and digital content.
+            </p>
+          </div>
+        </ScrollAnimation>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {projects.map((project, index) => (
-            <a
-              key={index}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block"
-            >
-              <Card className="overflow-hidden bg-card border-2 border-border hover:border-primary transition-all duration-500 hover-lift h-full">
+            <ScrollAnimation key={index} delay={index * 0.1}>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+              >
+                <Card className="overflow-hidden bg-card border-2 border-border hover:border-primary transition-all duration-500 hover-lift h-full">
               <div className="relative h-72 overflow-hidden">
                 <img
                   src={project.image}
@@ -84,8 +87,9 @@ const Projects = () => {
                   ))}
                 </div>
               </CardContent>
-            </Card>
+              </Card>
             </a>
+            </ScrollAnimation>
           ))}
         </div>
       </div>
