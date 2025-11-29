@@ -1,18 +1,18 @@
 import { Card, CardContent } from "@/components/ui/card";
-import clothingBrand from "@/assets/clothing-brand.jpg";
-import musicLabel from "@/assets/music-label.jpg";
+import clothingBrand from "@/assets/ajjad-running.jpg";
+import musicLabel from "@/assets/princestory-logo.jpg";
 import onCamera from "@/assets/on-camera.jpg";
 import contentCreation from "@/assets/content-creation.jpg";
 
 const projects = [
   {
-    title: "O3rabi Clothing Brand",
+    title: "Ajjad Clothing Brand",
     description: "Premium fashion label delivering modern, sophisticated designs with a focus on quality and style.",
     image: clothingBrand,
     tags: ["Fashion", "E-commerce", "Brand"],
   },
   {
-    title: "YouTube Music Label",
+    title: "PrinceStory Music Label",
     description: "Digital distribution and artist services platform helping musicians reach global audiences.",
     image: musicLabel,
     tags: ["Music", "Distribution", "Services"],

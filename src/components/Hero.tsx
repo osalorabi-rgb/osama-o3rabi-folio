@@ -17,16 +17,13 @@ const Hero = () => {
           <div className="space-y-8 fade-in">
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-                Osama Alorabi
+                Osama Orabi
               </h1>
               <div className="h-1 w-24 bg-gold"></div>
-              <p className="text-2xl md:text-3xl font-light text-muted-foreground">
-                Entrepreneur & Content Creator
-              </p>
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-              I build projects, create impactful content, and help people develop a strong digital presence.
+              Osama Orabi is an entrepreneur and creative mind who builds simple ideas into real projects. He works across content creation, digital identity, and creative ventures, with experience in brand building, media projects, and commercial appearances.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -53,7 +50,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-gold/20 to-transparent rounded-2xl transform rotate-6"></div>
               <img
                 src={profileImage}
-                alt="Osama Alorabi - Entrepreneur & Content Creator"
+                alt="Osama Orabi - Entrepreneur & Content Creator"
                 className="relative rounded-2xl w-full h-full object-cover shadow-2xl"
               />
             </div>
