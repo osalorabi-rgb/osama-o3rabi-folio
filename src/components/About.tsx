@@ -13,8 +13,13 @@ const About = () => {
           <ScrollAnimation delay={0.2}>
             <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
               <p>
-                Osama Orabi is an entrepreneur and creative mind who builds simple ideas into real projects.
-                He works across content creation, digital identity, and creative ventures, with experience in brand building, media projects, and commercial appearances.
+                Osama Orabi is an entrepreneur and multidisciplinary creative who turns ideas into practical, high-impact projects.
+              </p>
+              <p>
+                He works across e-commerce and startup building and operations, with experience in brand development, social media, and marketing strategy, while actively creating content and leading media production.
+              </p>
+              <p>
+                This mix gives him a balanced blend of creative vision and technical understanding.
               </p>
             </div>
           </ScrollAnimation>
