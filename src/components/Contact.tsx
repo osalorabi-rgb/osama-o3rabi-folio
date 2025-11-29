@@ -56,14 +56,14 @@ const Contact = () => {
   return (
     <section id="contact" className="py-16 px-6 bg-background scroll-animate">
       <div className="container mx-auto max-w-3xl">
-        <ScrollAnimation>
-          <div className="text-center mb-16 fade-in">
+        <ScrollAnimation direction="down">
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-inter font-bold mb-8">CONTACT</h2>
           </div>
         </ScrollAnimation>
 
-        <ScrollAnimation delay={0.2}>
-          <div className="space-y-8 fade-in-delay-1">
+        <ScrollAnimation delay={0.3}>
+          <div className="space-y-8">
           {/* Contact Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">

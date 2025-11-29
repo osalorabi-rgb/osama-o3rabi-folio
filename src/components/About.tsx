@@ -5,12 +5,12 @@ const About = () => {
     <section id="about" className="py-16 bg-background scroll-animate">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <ScrollAnimation>
+          <ScrollAnimation direction="left">
             <h2 className="text-5xl md:text-6xl font-inter font-bold mb-12 text-foreground">
               INTRO
             </h2>
           </ScrollAnimation>
-          <ScrollAnimation delay={0.2}>
+          <ScrollAnimation delay={0.2} direction="right">
             <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed font-sans">
               <p>
                 Osama Orabi is an entrepreneur and multidisciplinary creative who turns ideas into practical, high-impact projects.
