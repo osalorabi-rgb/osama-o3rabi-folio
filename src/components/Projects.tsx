@@ -70,7 +70,7 @@ const Projects = () => {
               </div>
 
               <CardContent className="p-6 space-y-3">
-                <h3 className="text-2xl font-display font-bold group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-2xl font-roboto font-bold group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed text-base">

@@ -25,7 +25,7 @@ const Hero = () => {
       {/* Content */}
       <ScrollAnimation>
         <div className="container mx-auto px-6 text-center relative z-10 fade-in">
-          <h1 className="text-7xl md:text-9xl font-display font-bold text-white mb-8 tracking-tight" style={{ fontStyle: 'italic' }}>
+          <h1 className="text-7xl md:text-9xl font-roboto font-black text-white mb-8 tracking-tight">
             Osama Orabi
           </h1>
           
