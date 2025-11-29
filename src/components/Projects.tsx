@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import ScrollAnimation from "./ScrollAnimation";
-import clothingBrand from "@/assets/ajjad-running.jpg";
+import clothingBrand from "@/assets/asom.jpg";
 import musicLabel from "@/assets/princestory-logo.jpg";
 import onCamera from "@/assets/on-camera.jpg";
 import contentCreation from "@/assets/content-creation.jpg";
@@ -21,18 +21,18 @@ const projects = [
     link: "https://www.youtube.com/@Princestory",
   },
   {
-    title: "Commercial Appearances",
-    description: "Professional modeling and on-camera presence for brands and commercial productions, delivering expressive performance and clean visual impact.",
-    image: onCamera,
-    tags: ["Modeling", "Commercial", "Media"],
-    link: "https://www.youtube.com/watch?v=PqdTSsAR6o8",
-  },
-  {
     title: "Content Creation",
     description: "Strategic content development and creative collaborations that build strong digital narratives, enhance brand presence, and engage audiences.",
     image: contentCreation,
     tags: ["Digital", "Strategy", "Collaboration"],
     link: "https://www.instagram.com/ajjad.brand/",
+  },
+  {
+    title: "Commercial Appearances",
+    description: "Professional modeling and on-camera presence for brands and commercial productions, delivering expressive performance and clean visual impact.",
+    image: onCamera,
+    tags: ["Modeling", "Commercial", "Media"],
+    link: "https://www.youtube.com/watch?v=PqdTSsAR6o8",
   },
 ];
 
