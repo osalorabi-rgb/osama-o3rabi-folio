@@ -21,11 +21,11 @@ const projects = [
     link: "https://www.youtube.com/@Princestory",
   },
   {
-    title: "Content Creation",
-    description: "Strategic content development and creative collaborations that build strong digital narratives, enhance brand presence, and engage audiences.",
+    title: "Content & Film Projects",
+    description: "End-to-end content and film projects: from concept and scripting to directing, shooting, and editing. Includes client work, personal films, and creative experiments.",
     image: contentCreation,
     tags: ["Digital", "Strategy", "Collaboration"],
-    link: "https://www.instagram.com/ajjad.brand/",
+    link: "https://drive.google.com/drive/folders/1mH1_XQwJDR3F-fKLB_Yqzm9fKjw9L4KW",
   },
   {
     title: "Commercial Appearances",
