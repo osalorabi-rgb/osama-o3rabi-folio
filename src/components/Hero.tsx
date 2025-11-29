@@ -36,11 +36,11 @@ const Hero = () => {
       {/* Content */}
       <ScrollAnimation>
         <div className="container mx-auto px-6 text-center relative z-10 fade-in">
-          <h1 className="text-7xl md:text-9xl font-roboto font-black text-white mb-8 tracking-tight">
+          <h1 className="text-7xl md:text-9xl font-inter font-black text-white mb-8 tracking-tight">
             Osama Orabi
           </h1>
           
-          <p className="text-2xl md:text-3xl text-white/90 font-light tracking-wider">
+          <p className="text-2xl md:text-3xl text-white/90 font-sans font-light tracking-wider">
             Entrepreneur & Content Creator
           </p>
         </div>

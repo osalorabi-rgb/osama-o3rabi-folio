@@ -44,7 +44,7 @@ const Projects = () => {
           <div className="text-center mb-20 fade-in">
             <h2 className="text-5xl md:text-6xl font-inter font-bold mb-4">PROJECTS</h2>
             <div className="h-0.5 w-24 bg-foreground mx-auto mb-6"></div>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-sans">
               A collection of projects and ventures across fashion, music, media, and digital content.
             </p>
           </div>
@@ -69,10 +69,10 @@ const Projects = () => {
               </div>
 
               <CardContent className="p-6 space-y-3">
-                <h3 className="text-2xl font-roboto font-bold group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-2xl font-inter font-bold group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed text-base">
+                <p className="text-muted-foreground leading-relaxed text-base font-sans">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 pt-2">

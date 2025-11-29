@@ -11,7 +11,7 @@ const About = () => {
             </h2>
           </ScrollAnimation>
           <ScrollAnimation delay={0.2}>
-            <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed font-sans">
               <p>
                 Osama Orabi is an entrepreneur and multidisciplinary creative who turns ideas into practical, high-impact projects.
               </p>
