@@ -37,7 +37,7 @@ const Header = () => {
             onClick={() => scrollToSection("hero")}
             className="text-2xl font-display font-bold text-foreground hover:opacity-70 transition-opacity"
           >
-            OA
+            o3rabi
           </button>
 
           {/* Desktop Navigation */}
