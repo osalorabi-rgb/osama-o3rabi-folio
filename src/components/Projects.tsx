@@ -61,30 +61,20 @@ const Projects = () => {
                 rel="noopener noreferrer"
                 className="group block"
               >
-              <Card className="overflow-hidden bg-card border-2 border-border hover:border-primary transition-all duration-500 hover-lift h-full">
+              <Card className="overflow-hidden bg-card border-2 border-border hover:border-primary transition-all duration-500 hover-lift h-full flex flex-col">
               <div className="relative h-72 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Button
-                    size="sm"
-                    variant="secondary"
-                    className="bg-background/90 backdrop-blur-sm hover:bg-background shadow-lg"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    عرض المشروع
-                  </Button>
-                </div>
               </div>
 
-              <CardContent className="p-6 space-y-3">
+              <CardContent className="p-6 space-y-3 flex-grow flex flex-col">
                 <h3 className="text-2xl font-inter font-bold group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed text-base font-sans">
+                <p className="text-muted-foreground leading-relaxed text-base font-sans flex-grow">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 pt-2">
@@ -97,6 +87,13 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
+                <Button 
+                  className="w-full mt-4 bg-primary text-primary-foreground hover:bg-primary/90 group-hover:shadow-lg transition-all duration-300"
+                  size="lg"
+                >
+                  View More
+                  <ExternalLink className="w-4 h-4 ml-2" />
+                </Button>
               </CardContent>
               </Card>
             </a>
