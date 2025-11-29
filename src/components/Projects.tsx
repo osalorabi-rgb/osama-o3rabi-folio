@@ -41,7 +41,7 @@ const Projects = () => {
     <section id="work" className="py-16 px-6 bg-background scroll-animate">
       <div className="container mx-auto max-w-7xl">
         <ScrollAnimation>
-          <div className="text-center mb-20 fade-in">
+          <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-inter font-bold mb-4">PROJECTS</h2>
             <div className="h-0.5 w-24 bg-foreground mx-auto mb-6"></div>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-sans">
@@ -52,7 +52,7 @@ const Projects = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {projects.map((project, index) => (
-            <ScrollAnimation key={index} delay={index * 0.1}>
+            <ScrollAnimation key={index} delay={index * 0.15} direction={index % 2 === 0 ? "left" : "right"}>
               <a
                 href={project.link}
                 target="_blank"

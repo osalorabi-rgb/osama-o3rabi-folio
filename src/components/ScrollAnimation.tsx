@@ -1,21 +1,48 @@
-import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { motion, useInView } from "framer-motion";
+import { ReactNode, useRef } from "react";
 
 interface ScrollAnimationProps {
   children: ReactNode;
   delay?: number;
+  direction?: "up" | "down" | "left" | "right";
 }
 
-const ScrollAnimation = ({ children, delay = 0 }: ScrollAnimationProps) => {
+const ScrollAnimation = ({ 
+  children, 
+  delay = 0, 
+  direction = "up" 
+}: ScrollAnimationProps) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const directionVariants = {
+    up: { y: 60, x: 0 },
+    down: { y: -60, x: 0 },
+    left: { x: 60, y: 0 },
+    right: { x: -60, y: 0 }
+  };
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50, scale: 0.95 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, margin: "-50px" }}
+      ref={ref}
+      initial={{ 
+        opacity: 0, 
+        ...directionVariants[direction],
+        scale: 0.95,
+        filter: "blur(4px)"
+      }}
+      animate={isInView ? { 
+        opacity: 1, 
+        y: 0,
+        x: 0,
+        scale: 1,
+        filter: "blur(0px)"
+      } : {}}
       transition={{
-        duration: 0.8,
+        duration: 1,
         delay,
-        ease: [0.16, 1, 0.3, 1]
+        ease: [0.16, 1, 0.3, 1],
+        filter: { duration: 0.6 }
       }}
     >
       {children}
