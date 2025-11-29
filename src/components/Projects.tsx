@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import clothingBrand from "@/assets/ajjad-running.jpg";
 import musicLabel from "@/assets/princestory-logo.jpg";
-import commercialVideo from "@/assets/commercial-video.mp4";
+import onCamera from "@/assets/on-camera.jpg";
 import contentCreation from "@/assets/content-creation.jpg";
 
 const projects = [
@@ -22,7 +22,7 @@ const projects = [
   {
     title: "Commercial Appearances",
     description: "Professional modeling and commercial appearances for brands and creative projects.",
-    video: commercialVideo,
+    image: onCamera,
     tags: ["Modeling", "Commercial", "Media"],
     link: "https://www.youtube.com/watch?v=PqdTSsAR6o8",
   },
@@ -47,48 +47,37 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {projects.map((project, index) => (
             <a
               key={index}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="block"
+              className="group block"
             >
-              <Card className="group overflow-hidden bg-card border border-border hover:border-foreground transition-all duration-300 hover-lift fade-in-delay-1 h-full"
-              >
-              <div className="relative h-80 overflow-hidden">
-                {project.video ? (
-                  <video
-                    src={project.video}
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  />
-                ) : (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                )}
+              <Card className="overflow-hidden bg-card border-2 border-border hover:border-primary transition-all duration-500 hover-lift h-full">
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
-              <CardContent className="p-8 space-y-4">
-                <h3 className="text-3xl font-display font-semibold">
+              <CardContent className="p-6 space-y-3">
+                <h3 className="text-2xl font-display font-bold group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed text-lg">
+                <p className="text-muted-foreground leading-relaxed text-base">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-3 pt-2">
+                <div className="flex flex-wrap gap-2 pt-2">
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-4 py-2 text-sm font-medium bg-secondary text-secondary-foreground rounded-md"
+                      className="px-3 py-1.5 text-xs font-semibold bg-secondary text-secondary-foreground rounded-full border border-border"
                     >
                       {tag}
                     </span>
