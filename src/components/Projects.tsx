@@ -1,4 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 import ScrollAnimation from "./ScrollAnimation";
 import clothingBrand from "@/assets/asom.jpg";
 import musicLabel from "@/assets/princestory-logo.jpg";
@@ -59,13 +61,23 @@ const Projects = () => {
                 rel="noopener noreferrer"
                 className="group block"
               >
-                <Card className="overflow-hidden bg-card border-2 border-border hover:border-primary transition-all duration-500 hover-lift h-full">
+              <Card className="overflow-hidden bg-card border-2 border-border hover:border-primary transition-all duration-500 hover-lift h-full">
               <div className="relative h-72 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    className="bg-background/90 backdrop-blur-sm hover:bg-background shadow-lg"
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    عرض المشروع
+                  </Button>
+                </div>
               </div>
 
               <CardContent className="p-6 space-y-3">
