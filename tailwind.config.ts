@@ -52,6 +52,7 @@ export default {
         sans: ['Montserrat', 'sans-serif'],
         display: ['Comfortaa', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -58,7 +58,7 @@ const Contact = () => {
       <div className="container mx-auto max-w-3xl">
         <ScrollAnimation>
           <div className="text-center mb-16 fade-in">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-8">CONTACT</h2>
+            <h2 className="text-4xl md:text-5xl font-inter font-bold mb-8">CONTACT</h2>
           </div>
         </ScrollAnimation>
 
