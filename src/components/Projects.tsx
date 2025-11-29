@@ -7,7 +7,7 @@ import contentCreation from "@/assets/content-creation.jpg";
 const projects = [
   {
     title: "Ajjad Clothing Brand",
-    description: "Premium fashion label delivering modern, sophisticated designs with a focus on quality and style.",
+    description: "Producing fashion material with modern, sophisticated designs with a focus on quality and style.",
     image: clothingBrand,
     tags: ["Fashion", "E-commerce", "Brand"],
   },
@@ -36,7 +36,7 @@ const Projects = () => {
     <section id="work" className="py-24 px-6 bg-background">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-20 fade-in">
-          <h2 className="text-5xl md:text-6xl font-display font-bold mb-4">My Work</h2>
+          <h2 className="text-5xl md:text-6xl font-display font-bold mb-4">Project</h2>
           <div className="h-0.5 w-24 bg-foreground mx-auto mb-6"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             A collection of projects and ventures across fashion, music, media, and digital content.
@@ -66,7 +66,6 @@ const Projects = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
               </div>
 
               <CardContent className="p-8 space-y-4">
