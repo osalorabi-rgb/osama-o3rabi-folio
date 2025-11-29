@@ -8,60 +8,38 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 250 100% 4%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 13%;
+    --foreground: 0 0% 100%;
 
-    --card: 250 50% 8%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 18%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 250 50% 8%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 18%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 280 90% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 13%;
 
-    --secondary: 195 95% 55%;
-    --secondary-foreground: 250 100% 4%;
+    --secondary: 0 0% 25%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 250 30% 15%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 0 0% 30%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 30 100% 60%;
-    --accent-foreground: 250 100% 4%;
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 13%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 250 30% 20%;
-    --input: 250 30% 20%;
-    --ring: 280 90% 60%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 0 0% 100%;
 
-    --radius: 1.5rem;
+    --radius: 0.5rem;
 
-    --purple: 280 90% 60%;
-    --purple-light: 280 85% 75%;
-    --purple-dark: 280 95% 45%;
-    
-    --cyan: 195 95% 55%;
-    --cyan-light: 195 90% 70%;
-    --cyan-dark: 195 100% 40%;
-    
-    --orange: 30 100% 60%;
-    --orange-light: 30 100% 75%;
-    --orange-dark: 30 100% 45%;
-    
-    --pink: 330 85% 65%;
-    --pink-light: 330 80% 80%;
-    --pink-dark: 330 90% 50%;
-
-    --gradient-hero: linear-gradient(135deg, hsl(280 90% 60%), hsl(195 95% 55%), hsl(330 85% 65%));
-    --gradient-card: linear-gradient(135deg, hsl(250 50% 10%), hsl(250 50% 6%));
-    --gradient-accent: linear-gradient(90deg, hsl(280 90% 60%), hsl(330 85% 65%));
-    --gradient-glow: linear-gradient(180deg, hsl(280 90% 60% / 0.1), transparent);
-
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    --transition-elastic: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-smooth: all 0.3s ease;
+    --transition-slow: all 0.6s ease;
   }
 }
 
@@ -86,135 +64,42 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .text-purple { color: hsl(var(--purple)); }
-  .text-cyan { color: hsl(var(--cyan)); }
-  .text-orange { color: hsl(var(--orange)); }
-  .text-pink { color: hsl(var(--pink)); }
-  
-  .bg-purple { background-color: hsl(var(--purple)); }
-  .bg-cyan { background-color: hsl(var(--cyan)); }
-  .bg-orange { background-color: hsl(var(--orange)); }
-  .bg-pink { background-color: hsl(var(--pink)); }
-  
-  .gradient-hero { background: var(--gradient-hero); }
-  .gradient-card { background: var(--gradient-card); }
-  .gradient-accent { background: var(--gradient-accent); }
-  .gradient-text {
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
   .hover-lift {
-    transition: var(--transition-bounce);
+    transition: var(--transition-smooth);
   }
   
   .hover-lift:hover {
-    transform: translateY(-12px) scale(1.02);
-  }
-  
-  .hover-tilt:hover {
-    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) scale(1.05);
+    transform: translateY(-5px);
   }
 
   .fade-in {
-    animation: fadeIn 1s ease-out forwards;
+    animation: fadeIn 0.8s ease-out forwards;
     opacity: 0;
   }
 
   .fade-in-delay-1 {
-    animation: fadeIn 1s ease-out 0.2s forwards;
+    animation: fadeIn 0.8s ease-out 0.2s forwards;
     opacity: 0;
   }
 
   .fade-in-delay-2 {
-    animation: fadeIn 1s ease-out 0.4s forwards;
+    animation: fadeIn 0.8s ease-out 0.4s forwards;
     opacity: 0;
   }
 
   .fade-in-delay-3 {
-    animation: fadeIn 1s ease-out 0.6s forwards;
+    animation: fadeIn 0.8s ease-out 0.6s forwards;
     opacity: 0;
-  }
-  
-  .slide-in-left {
-    animation: slideInLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  }
-  
-  .slide-in-right {
-    animation: slideInRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  }
-  
-  .float {
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  .pulse-glow {
-    animation: pulseGlow 2s ease-in-out infinite;
-  }
-  
-  .rotate-slow {
-    animation: rotateSlow 20s linear infinite;
   }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 20px hsl(var(--purple) / 0.5);
-  }
-  50% {
-    box-shadow: 0 0 40px hsl(var(--purple)), 0 0 60px hsl(var(--cyan) / 0.5);
-  }
-}
-
-@keyframes rotateSlow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
