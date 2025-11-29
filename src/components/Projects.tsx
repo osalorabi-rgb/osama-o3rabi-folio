@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import clothingBrand from "@/assets/ajjad-running.jpg";
 import musicLabel from "@/assets/princestory-logo.jpg";
-import onCamera from "@/assets/on-camera.jpg";
+import commercialVideo from "@/assets/commercial-video.mp4";
 import contentCreation from "@/assets/content-creation.jpg";
 
 const projects = [
@@ -18,9 +18,9 @@ const projects = [
     tags: ["Music", "Distribution", "Services"],
   },
   {
-    title: "On-Camera Work",
+    title: "Commercial Appearances",
     description: "Professional modeling and commercial appearances for brands and creative projects.",
-    image: onCamera,
+    video: commercialVideo,
     tags: ["Modeling", "Commercial", "Media"],
   },
   {
@@ -50,11 +50,22 @@ const Projects = () => {
               className="group overflow-hidden bg-card border border-border hover:border-foreground transition-all duration-300 hover-lift fade-in-delay-1"
             >
               <div className="relative h-80 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+                {project.video ? (
+                  <video
+                    src={project.video}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
               </div>
 
