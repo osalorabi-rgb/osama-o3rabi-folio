@@ -7,29 +7,29 @@ import contentCreation from "@/assets/content-creation.jpg";
 
 const projects = [
   {
-    title: "Ajjad Clothing Brand",
-    description: "Producing fashion material with modern, sophisticated designs with a focus on quality and style.",
+    title: "Founder of Ajjad",
+    description: "Producing modern, refined fashion pieces with a focus on quality, culture, and clean design. A growing e-commerce brand built on strong identity and thoughtful craftsmanship.",
     image: clothingBrand,
     tags: ["Fashion", "E-commerce", "Brand"],
     link: "https://ajjad.com/",
   },
   {
-    title: "PrinceStory Music Label",
-    description: "Digital distribution and artist services platform helping musicians reach global audiences.",
+    title: "Founder of PrinceStory",
+    description: "A digital music label supporting artists through global distribution, platform optimization, and creative services that amplify reach and impact.",
     image: musicLabel,
     tags: ["Music", "Distribution", "Services"],
     link: "https://www.youtube.com/@Princestory",
   },
   {
     title: "Commercial Appearances",
-    description: "Professional modeling and commercial appearances for brands and creative projects.",
+    description: "Professional modeling and on-camera presence for brands and commercial productions, delivering expressive performance and clean visual impact.",
     image: onCamera,
     tags: ["Modeling", "Commercial", "Media"],
     link: "https://www.youtube.com/watch?v=PqdTSsAR6o8",
   },
   {
     title: "Content Creation",
-    description: "Strategic content development and collaborations building impactful digital narratives.",
+    description: "Strategic content development and creative collaborations that build strong digital narratives, enhance brand presence, and engage audiences.",
     image: contentCreation,
     tags: ["Digital", "Strategy", "Collaboration"],
     link: "https://www.instagram.com/ajjad.brand/",
@@ -66,7 +66,6 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
               <CardContent className="p-6 space-y-3">
