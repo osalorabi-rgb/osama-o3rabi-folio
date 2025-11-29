@@ -10,24 +10,28 @@ const projects = [
     description: "Producing fashion material with modern, sophisticated designs with a focus on quality and style.",
     image: clothingBrand,
     tags: ["Fashion", "E-commerce", "Brand"],
+    link: "https://ajjad.com/",
   },
   {
     title: "PrinceStory Music Label",
     description: "Digital distribution and artist services platform helping musicians reach global audiences.",
     image: musicLabel,
     tags: ["Music", "Distribution", "Services"],
+    link: "https://www.youtube.com/@Princestory",
   },
   {
     title: "Commercial Appearances",
     description: "Professional modeling and commercial appearances for brands and creative projects.",
     video: commercialVideo,
     tags: ["Modeling", "Commercial", "Media"],
+    link: "https://www.youtube.com/watch?v=PqdTSsAR6o8",
   },
   {
     title: "Content Creation",
     description: "Strategic content development and collaborations building impactful digital narratives.",
     image: contentCreation,
     tags: ["Digital", "Strategy", "Collaboration"],
+    link: "https://www.instagram.com/ajjad.brand/",
   },
 ];
 
@@ -36,19 +40,24 @@ const Projects = () => {
     <section id="work" className="py-24 px-6 bg-background">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-20 fade-in">
-          <h2 className="text-5xl md:text-6xl font-display font-bold mb-4">Project</h2>
+          <h2 className="text-5xl md:text-6xl font-display font-bold mb-4">Projects</h2>
           <div className="h-0.5 w-24 bg-foreground mx-auto mb-6"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             A collection of projects and ventures across fashion, music, media, and digital content.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-4 gap-6">
           {projects.map((project, index) => (
-            <Card
+            <a
               key={index}
-              className="group overflow-hidden bg-card border border-border hover:border-foreground transition-all duration-300 hover-lift fade-in-delay-1"
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
             >
+              <Card className="group overflow-hidden bg-card border border-border hover:border-foreground transition-all duration-300 hover-lift fade-in-delay-1 h-full"
+              >
               <div className="relative h-80 overflow-hidden">
                 {project.video ? (
                   <video
@@ -87,6 +96,7 @@ const Projects = () => {
                 </div>
               </CardContent>
             </Card>
+            </a>
           ))}
         </div>
       </div>
