@@ -52,7 +52,7 @@ const Projects = () => {
           </div>
         </ScrollAnimation>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 auto-rows-fr items-stretch">
           {projects.map((project, index) => (
             <ScrollAnimation key={index} delay={index * 0.15} direction={index % 2 === 0 ? "left" : "right"}>
               <a
