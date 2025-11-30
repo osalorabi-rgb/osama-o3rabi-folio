@@ -26,7 +26,7 @@ const projects = [
     title: "Content & Film Projects",
     description: "End-to-end content and film projects: from concept and scripting to directing, shooting, and editing. Includes client work, personal films, and creative experiments.",
     image: contentCreation,
-    tags: ["Digital", "Strategy", "Collaboration"],
+    tags: ["Content", "Film", "Production"],
     link: "https://drive.google.com/drive/folders/1mH1_XQwJDR3F-fKLB_Yqzm9fKjw9L4KW",
   },
   {
