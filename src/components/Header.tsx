@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,9 +18,18 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
+    if (location.pathname !== "/") {
+      navigate(`/#${id}`);
+      window.setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
       setIsMobileMenuOpen(false);
     }
   };
@@ -25,7 +37,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
+        isScrolled || isMobileMenuOpen
           ? "bg-background/95 backdrop-blur-sm border-b border-border" 
           : "bg-transparent"
       }`}
@@ -35,6 +47,7 @@ const Header = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection("hero")}
+            aria-label="Go to homepage"
             className="text-2xl font-display font-bold text-foreground hover:opacity-70 transition-opacity"
           >
             o3rabi
@@ -48,6 +61,13 @@ const Header = () => {
               className="text-foreground hover:bg-transparent hover:opacity-70 transition-opacity"
             >
               Home
+            </Button>
+            <Button
+              asChild
+              variant="ghost"
+              className="text-foreground hover:bg-transparent hover:opacity-70 transition-opacity"
+            >
+              <Link to="/business-representation">Business Representation</Link>
             </Button>
             <Button
               variant="ghost"
@@ -68,6 +88,8 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMobileMenuOpen}
             className="md:hidden p-2 hover:opacity-70 transition-opacity"
           >
             {isMobileMenuOpen ? (
@@ -87,6 +109,15 @@ const Header = () => {
               className="w-full justify-start text-base h-12 hover:bg-secondary"
             >
               Home
+            </Button>
+            <Button
+              asChild
+              variant="ghost"
+              className="w-full justify-start text-base h-12 hover:bg-secondary"
+            >
+              <Link to="/business-representation" onClick={() => setIsMobileMenuOpen(false)}>
+                Business Representation
+              </Link>
             </Button>
             <Button
               variant="ghost"

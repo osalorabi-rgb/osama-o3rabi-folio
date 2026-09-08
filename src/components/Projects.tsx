@@ -1,105 +1,154 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import ScrollAnimation from "./ScrollAnimation";
-import clothingBrand from "@/assets/asom.jpg";
+import ajjadImage from "@/assets/asom.jpg";
+import wahibImage from "@/assets/wahib.png";
+import profileImage from "@/assets/profile.jpg";
 import musicLabel from "@/assets/princestory-logo.jpg";
 import onCamera from "@/assets/on-camera.jpg";
 import contentCreation from "@/assets/content-creation.jpg";
 
-const projects = [
+const ventures = [
   {
-    title: "Founder of Ajjad",
-    description: "Producing modern, refined fashion pieces with a focus on quality, culture, and clean design. A growing e-commerce brand built on strong identity and thoughtful craftsmanship.",
-    image: clothingBrand,
-    tags: ["Fashion", "E-commerce", "Brand"],
-    link: "https://ajjad.com/",
+    title: "Wahib",
+    description: "Product development and MVP launch.",
+    image: wahibImage,
+    imageClassName: "object-contain bg-neutral-950 p-10 md:p-14",
+    link: "https://getwahib.com/",
   },
   {
-    title: "Founder of PrinceStory",
-    description: "A digital music label supporting artists through global distribution, platform optimization, and creative services that amplify reach and impact.",
+    title: "Ajjad",
+    description: "Brand launch, growth and activation.",
+    image: ajjadImage,
+    imageClassName: "object-cover",
+    link: "https://ajjad.com/",
+  },
+];
+
+const creativeWork = [
+  {
+    title: "Personal Brand",
+    description: "Content on business, entrepreneurship, branding, and marketing.",
+    image: profileImage,
+    action: "View Content",
+    link: "https://www.instagram.com/o3rabi/",
+  },
+  {
+    title: "PrinceStory",
+    description: "Music distribution and creative support for independent artists.",
     image: musicLabel,
-    tags: ["Music", "Distribution", "Services"],
+    action: "View Channel",
     link: "https://www.youtube.com/@Princestory",
   },
   {
-    title: "Content & Film Projects",
-    description: "End-to-end content and film projects: from concept and scripting to directing, shooting, and editing. Includes client work, personal films, and creative experiments.",
+    title: "Film Projects",
+    description: "Selected film, production, and visual storytelling work.",
     image: contentCreation,
-    tags: ["Content", "Film", "Production"],
+    action: "View Projects",
     link: "https://drive.proton.me/urls/A8X4DDBHA4#Cpk40zTUb0h8",
   },
   {
     title: "Commercial Appearances",
-    description: "Professional modeling and on-camera presence for brands and commercial productions, delivering expressive performance and clean visual impact.",
+    description: "Selected on-camera and commercial work.",
     image: onCamera,
-    tags: ["Modeling", "Commercial", "Media"],
+    action: "View Work",
     link: "https://www.youtube.com/watch?v=PqdTSsAR6o8",
   },
 ];
 
 const Projects = () => {
   return (
-    <section id="work" className="py-16 px-6 bg-background scroll-animate">
+    <section id="work" className="scroll-mt-24 bg-background px-6 py-16">
       <div className="container mx-auto max-w-7xl">
         <ScrollAnimation>
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-inter font-bold mb-4">PROJECTS</h2>
-            <div className="h-0.5 w-24 bg-foreground mx-auto mb-6"></div>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-sans">
-              A collection of projects and ventures across fashion, music, media, and digital content.
+          <div className="mb-14 text-center md:mb-20">
+            <h2 className="mb-4 font-inter text-5xl font-bold md:text-6xl">VENTURES</h2>
+            <div className="mx-auto mb-6 h-0.5 w-24 bg-foreground" />
+            <p className="mx-auto max-w-2xl font-sans text-xl text-muted-foreground">
+              Businesses and products built from idea through execution.
             </p>
           </div>
         </ScrollAnimation>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 auto-rows-fr items-stretch">
-          {projects.map((project, index) => (
-            <ScrollAnimation key={index} delay={index * 0.15} direction={index % 2 === 0 ? "left" : "right"}>
+        <div className="grid gap-8 md:grid-cols-2">
+          {ventures.map((venture, index) => (
+            <ScrollAnimation key={venture.title} delay={index * 0.12} direction={index === 0 ? "left" : "right"}>
               <a
-                href={project.link}
+                href={venture.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block"
+                className="group block h-full"
+                aria-label={`Visit ${venture.title}`}
               >
-              <Card className="overflow-hidden bg-card border-2 border-border hover:border-primary transition-all duration-500 hover-lift h-full flex flex-col">
-              <div className="relative h-72 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-              </div>
-
-              <CardContent className="p-6 space-y-3 flex-grow flex flex-col">
-                <h3 className="text-2xl font-inter font-bold group-hover:text-primary transition-colors duration-300">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed text-base font-sans flex-grow">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-3 py-1.5 text-xs font-semibold bg-secondary text-secondary-foreground rounded-full border border-border"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <Button 
-                  className="w-full mt-4 bg-primary text-primary-foreground hover:bg-primary/90 group-hover:shadow-lg transition-all duration-300"
-                  size="lg"
-                >
-                  View More
-                  <ExternalLink className="w-4 h-4 ml-2" />
-                </Button>
-              </CardContent>
-              </Card>
-            </a>
+                <Card className="flex h-full flex-col overflow-hidden border-2 border-border bg-card transition-all duration-500 hover:border-primary hover-lift">
+                  <div className="h-72 overflow-hidden md:h-96">
+                    <img
+                      src={venture.image}
+                      alt={`${venture.title} venture`}
+                      loading="lazy"
+                      className={`h-full w-full transition-transform duration-700 group-hover:scale-105 ${venture.imageClassName}`}
+                    />
+                  </div>
+                  <CardContent className="flex flex-grow items-end justify-between gap-6 p-6 md:p-8">
+                    <div>
+                      <h3 className="font-inter text-3xl font-bold md:text-4xl">{venture.title}</h3>
+                      <p className="mt-2 font-sans text-base text-muted-foreground md:text-lg">
+                        {venture.description}
+                      </p>
+                    </div>
+                    <ArrowUpRight className="h-6 w-6 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+                  </CardContent>
+                </Card>
+              </a>
             </ScrollAnimation>
           ))}
+        </div>
+
+        <div className="mt-24 md:mt-32">
+          <ScrollAnimation direction="left">
+            <div className="mb-12 max-w-2xl">
+              <h2 className="mb-4 font-inter text-4xl font-bold md:text-5xl">CREATIVE WORK</h2>
+              <div className="mb-6 h-0.5 w-24 bg-foreground" />
+              <p className="font-sans text-lg text-muted-foreground">
+                Selected content, media, and creative work.
+              </p>
+            </div>
+          </ScrollAnimation>
+
+          <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {creativeWork.map((item, index) => (
+              <ScrollAnimation key={item.title} delay={index * 0.08}>
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block h-full"
+                  aria-label={`${item.action}: ${item.title}`}
+                >
+                  <Card className="flex h-full flex-col overflow-hidden border border-border bg-card transition-colors hover:border-foreground/50">
+                    <div className="h-44 overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt=""
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <CardContent className="flex flex-grow flex-col p-5">
+                      <h3 className="font-inter text-xl font-bold">{item.title}</h3>
+                      <p className="mt-2 flex-grow font-sans text-sm leading-relaxed text-muted-foreground">
+                        {item.description}
+                      </p>
+                      <span className="mt-5 inline-flex items-center font-sans text-sm font-semibold">
+                        {item.action}
+                        <ArrowUpRight className="ml-1.5 h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                      </span>
+                    </CardContent>
+                  </Card>
+                </a>
+              </ScrollAnimation>
+            ))}
+          </div>
         </div>
       </div>
     </section>

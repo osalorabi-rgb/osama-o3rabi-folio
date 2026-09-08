@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { ReactNode, useRef } from "react";
 
 interface ScrollAnimationProps {
@@ -14,6 +14,7 @@ const ScrollAnimation = ({
 }: ScrollAnimationProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const shouldReduceMotion = useReducedMotion();
 
   const directionVariants = {
     up: { y: 60, x: 0 },
@@ -25,7 +26,7 @@ const ScrollAnimation = ({
   return (
     <motion.div
       ref={ref}
-      initial={{ 
+      initial={shouldReduceMotion ? false : {
         opacity: 0, 
         ...directionVariants[direction],
         scale: 0.95,
@@ -39,8 +40,8 @@ const ScrollAnimation = ({
         filter: "blur(0px)"
       } : {}}
       transition={{
-        duration: 1,
-        delay,
+        duration: shouldReduceMotion ? 0 : 1,
+        delay: shouldReduceMotion ? 0 : delay,
         ease: [0.16, 1, 0.3, 1],
         filter: { duration: 0.6 }
       }}

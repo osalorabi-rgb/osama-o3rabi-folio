@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Instagram, Linkedin, Twitter, Youtube, Facebook } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MessageCircle, Twitter, Youtube } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import ScrollAnimation from "./ScrollAnimation";
 
@@ -54,11 +54,28 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 px-6 bg-background scroll-animate">
+    <section id="contact" className="scroll-mt-24 bg-background px-6 py-16">
       <div className="container mx-auto max-w-3xl">
         <ScrollAnimation direction="down">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-inter font-bold mb-8">CONTACT</h2>
+          <div className="mb-12 text-center md:mb-16">
+            <h2 className="mb-5 font-inter text-4xl font-bold md:text-5xl">CONTACT</h2>
+            <p className="mx-auto max-w-xl font-sans text-lg text-muted-foreground">
+              For business reviews, collaborations, or a direct conversation.
+            </p>
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+              <Button asChild className="h-12 bg-foreground px-6 text-background hover:bg-foreground/90">
+                <a href="https://wa.me/967772744377" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2 h-4 w-4" />
+                  WhatsApp
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="h-12 px-6">
+                <a href="mailto:osamaalorabi77@gmail.com">
+                  <Mail className="mr-2 h-4 w-4" />
+                  Email
+                </a>
+              </Button>
+            </div>
           </div>
         </ScrollAnimation>
 
@@ -67,10 +84,13 @@ const Contact = () => {
           {/* Contact Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
+              <Label htmlFor="name" className="sr-only">Name</Label>
               <Input
                 id="name"
+                name="name"
                 type="text"
                 placeholder="Name"
+                autoComplete="name"
                 value={formData.name}
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
@@ -80,10 +100,13 @@ const Contact = () => {
               />
             </div>
             <div className="space-y-2">
+              <Label htmlFor="email" className="sr-only">Email</Label>
               <Input
                 id="email"
+                name="email"
                 type="email"
                 placeholder="Email"
+                autoComplete="email"
                 value={formData.email}
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
@@ -93,8 +116,10 @@ const Contact = () => {
               />
             </div>
             <div className="space-y-2">
+              <Label htmlFor="message" className="sr-only">Message</Label>
               <Textarea
                 id="message"
+                name="message"
                 placeholder="Message"
                 value={formData.message}
                 onChange={(e) =>
@@ -119,6 +144,7 @@ const Contact = () => {
                 href="https://www.instagram.com/o3rabi/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Instagram className="h-6 w-6" />
@@ -127,6 +153,7 @@ const Contact = () => {
                 href="https://www.youtube.com/@o3rabi"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="YouTube"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Youtube className="h-6 w-6" />
@@ -135,6 +162,7 @@ const Contact = () => {
                 href="https://www.facebook.com/o3rabi"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Facebook"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Facebook className="h-6 w-6" />
@@ -143,6 +171,7 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/o3rabi-b32479271/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Linkedin className="h-6 w-6" />
@@ -151,6 +180,7 @@ const Contact = () => {
                 href="https://www.tiktok.com/@o3rabi"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="TikTok"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -161,6 +191,7 @@ const Contact = () => {
                 href="https://x.com/o3rabii"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="X"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Twitter className="h-6 w-6" />
