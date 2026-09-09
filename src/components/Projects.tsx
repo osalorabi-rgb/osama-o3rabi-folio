@@ -9,6 +9,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import ScrollAnimation from "./ScrollAnimation";
 import ajjadImage from "@/assets/asom.jpg";
 import wahibImage from "@/assets/wahib.png";
@@ -169,6 +170,24 @@ const Projects = () => {
               </ScrollAnimation>
             ))}
           </div>
+        </div>
+      </div>
+
+      <div className="-mx-6 mt-24 bg-foreground px-6 py-16 text-background md:mt-32 md:py-20">
+        <div className="container mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+          <p className="max-w-3xl font-inter text-3xl font-bold leading-tight md:text-5xl">
+            Strong businesses sometimes look weaker than they really are.
+          </p>
+          <Button
+            asChild
+            variant="outline"
+            className="h-12 shrink-0 border-background/70 bg-transparent px-5 text-background hover:bg-background hover:text-foreground"
+          >
+            <Link to="/business-representation">
+              Explore Business Representation
+              <ArrowUpRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </div>
 
