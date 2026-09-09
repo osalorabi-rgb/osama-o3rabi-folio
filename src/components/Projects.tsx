@@ -26,6 +26,7 @@ import ajjadPackaging from "@/assets/ajjad-gallery/ajjad-packaging.jpg";
 import ajjadFounders from "@/assets/ajjad-gallery/ajjad-founders.jpg";
 import ajjadRetail from "@/assets/ajjad-gallery/ajjad-retail.jpg";
 import ajjadActivation from "@/assets/ajjad-gallery/ajjad-activation.jpg";
+import ajjadBag from "@/assets/ajjad-gallery/ajjad-bag.jpg";
 
 const ventures = [
   {
@@ -52,7 +53,7 @@ const ventures = [
     role: "I built Ajjad through product, branding, marketing, content, customer experience, and day-to-day operations.",
     note: "More than a fashion brand, it became where I learned what business actually looks like outside PowerPoint slides.",
     highlights: [],
-    gallery: [ajjadProduct, ajjadPackaging, ajjadFounders, ajjadRetail, ajjadActivation],
+    gallery: [ajjadRetail, ajjadProduct, ajjadPackaging, ajjadFounders, ajjadActivation, ajjadBag],
   },
 ];
 
