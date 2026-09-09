@@ -49,7 +49,7 @@ const creativeWork = [
   {
     title: "Personal Brand",
     description: "Content on business, entrepreneurship, branding, and marketing.",
-    image: contentCreation,
+    image: null,
     action: "View Content",
     link: "https://www.instagram.com/o3rabi/",
   },
@@ -147,14 +147,16 @@ const Projects = () => {
                   aria-label={`${item.action}: ${item.title}`}
                 >
                   <Card className="flex h-full flex-col overflow-hidden border border-border bg-card transition-colors hover:border-foreground/50">
-                    <div className="h-44 overflow-hidden">
-                      <img
-                        src={item.image}
-                        alt=""
-                        loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
+                    {item.image && (
+                      <div className="h-44 overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt=""
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    )}
                     <CardContent className="flex flex-grow flex-col p-5">
                       <h3 className="font-inter text-xl font-bold">{item.title}</h3>
                       <p className="mt-2 flex-grow font-sans text-sm leading-relaxed text-muted-foreground">
