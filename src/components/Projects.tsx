@@ -49,7 +49,7 @@ const creativeWork = [
   {
     title: "Personal Brand",
     description: "Content on business, entrepreneurship, branding, and marketing.",
-    image: profileImage,
+    image: contentCreation,
     action: "View Content",
     link: "https://www.instagram.com/o3rabi/",
   },
@@ -63,7 +63,7 @@ const creativeWork = [
   {
     title: "Film Projects",
     description: "Selected film, production, and visual storytelling work.",
-    image: contentCreation,
+    image: profileImage,
     action: "View Projects",
     link: "https://drive.proton.me/urls/A8X4DDBHA4#Cpk40zTUb0h8",
   },
