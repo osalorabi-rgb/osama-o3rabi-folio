@@ -1,15 +1,18 @@
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import PageSeo from "@/components/PageSeo";
+import { SITE_URL } from "@/lib/seo";
 
 const NotFound = () => {
   const location = useLocation();
 
-  useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
-  }, [location.pathname]);
-
   return (
     <div className="flex min-h-screen items-center justify-center bg-muted">
+      <PageSeo
+        title="Page Not Found | Osama Orabi"
+        description="The requested page could not be found."
+        canonical={`${SITE_URL}${location.pathname}`}
+        robots="noindex, follow"
+      />
       <div className="text-center">
         <h1 className="mb-4 text-4xl font-bold">404</h1>
         <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>

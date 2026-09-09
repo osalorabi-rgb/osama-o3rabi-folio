@@ -13,7 +13,7 @@ const About = () => {
           <ScrollAnimation delay={0.2} direction="right">
             <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed font-sans">
               <p>
-                Osama Orabi is a founder and business builder working at the intersection of entrepreneurship and creativity.
+                Osama Orabi, also known as Osama Alorabi, is a Yemeni entrepreneur, founder of Wahib, business builder, and business content creator working at the intersection of entrepreneurship and creativity.
               </p>
               <p>
                 He works across e-commerce, startup building, and operations, with experience in brand development, social media, and marketing, while actively creating content and leading media production. More recently, his work has expanded further into product development, turning ideas into practical products and market-ready concepts.

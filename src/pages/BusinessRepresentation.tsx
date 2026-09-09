@@ -3,20 +3,24 @@ import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import PageSeo from "@/components/PageSeo";
 import ScrollAnimation from "@/components/ScrollAnimation";
+import {
+  BUSINESS_REPRESENTATION_SEO,
+  BUSINESS_REPRESENTATION_STRUCTURED_DATA,
+} from "@/lib/seo";
 
 const BusinessRepresentation = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Business Representation | Osama Orabi";
-
-    return () => {
-      document.title = "Osama Orabi | Founder & Business Builder";
-    };
   }, []);
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <PageSeo
+        {...BUSINESS_REPRESENTATION_SEO}
+        structuredData={BUSINESS_REPRESENTATION_STRUCTURED_DATA}
+      />
       <Header />
       <main className="flex flex-1 px-6 pb-20 pt-28 md:pb-28 md:pt-40">
         <div className="container mx-auto max-w-4xl">

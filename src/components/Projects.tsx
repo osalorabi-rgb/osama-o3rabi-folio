@@ -33,27 +33,61 @@ const ventures = [
     title: "Wahib",
     description: "Social Gifting Platform",
     image: wahibImage,
+    imageAlt: "Wahib social gifting platform logo",
+    imageWidth: 1080,
+    imageHeight: 1080,
     imageClassName: "object-contain bg-neutral-950 p-10 md:p-14",
     link: "https://getwahib.com/",
     category: "Social Gifting Platform",
-    overview: "A social gifting platform built around a simple problem: people want to give better gifts without guessing.",
+    overview: "Wahib (واهب) is a social gifting platform founded by Osama Orabi around a simple problem: people want to give better gifts without guessing.",
     role: "Wahib lets people share what they genuinely want or need, while friends and family can coordinate gifts privately.",
-    note: "Currently being developed for the GCC market.",
+    note: "Currently being developed as a GCC gifting startup.",
     highlights: ["Top 36 High-Potential Team - Create Apps Championship + Accelerator"],
     gallery: [wahibGraduation, wahibProduct, wahibApps, wahibPress],
+    galleryAlt: [
+      "Osama Orabi at the Create Apps Championship graduation with Wahib",
+      "Wahib social gifting platform app interface",
+      "Wahib among 32 apps launched through the Create Apps accelerator",
+      "Entrepreneur Middle East coverage of the 32-app market launch",
+    ],
+    galleryDimensions: [
+      { width: 1920, height: 1080 },
+      { width: 1920, height: 1080 },
+      { width: 2752, height: 1536 },
+      { width: 1904, height: 865 },
+    ],
   },
   {
     title: "Ajjad",
     description: "E-commerce Fashion Brand",
     image: ajjadImage,
+    imageAlt: "Ajjad brand campaign by Osama Orabi",
+    imageWidth: 1298,
+    imageHeight: 1920,
     imageClassName: "object-cover object-[center_38%]",
     link: "https://ajjad.com/",
     category: "E-commerce Fashion Brand",
-    overview: "One of my first real business playgrounds.",
+    overview: "Ajjad (اجاد) is an e-commerce fashion brand founded by Osama Orabi and one of his first real business playgrounds.",
     role: "I built Ajjad through product, branding, marketing, content, customer experience, and day-to-day operations.",
     note: "More than a fashion brand, it became where I learned what business actually looks like outside PowerPoint slides.",
     highlights: [],
     gallery: [ajjadFounders, ajjadProduct, ajjadPackaging, ajjadRetail, ajjadActivation, ajjadBag],
+    galleryAlt: [
+      "Osama Orabi with an Ajjad fashion collection",
+      "Ajjad model wearing branded apparel",
+      "Ajjad branded e-commerce packaging",
+      "Ajjad brand displayed at Yemen Living",
+      "Ajjad fashion products in a retail activation",
+      "Ajjad branded shopping bag in Yemen",
+    ],
+    galleryDimensions: [
+      { width: 3840, height: 4800 },
+      { width: 1154, height: 1430 },
+      { width: 1080, height: 1080 },
+      { width: 1440, height: 2560 },
+      { width: 2400, height: 1350 },
+      { width: 3024, height: 4032 },
+    ],
   },
 ];
 
@@ -62,6 +96,9 @@ const creativeWork = [
     title: "Business Content",
     description: "Content on business, entrepreneurship, and marketing.",
     image: contentPerspectives,
+    imageAlt: "Osama Orabi creating business content",
+    imageWidth: 1242,
+    imageHeight: 2194,
     imageClassName: "object-cover object-[center_62%]",
     action: "View Content",
     link: "https://www.instagram.com/o3rabi/",
@@ -70,6 +107,9 @@ const creativeWork = [
     title: "PrinceStory",
     description: "Music distribution and support for independent artists.",
     image: musicLabel,
+    imageAlt: "PrinceStory music distribution channel",
+    imageWidth: 1920,
+    imageHeight: 1920,
     imageClassName: "object-contain bg-white p-6",
     action: "View Channel",
     link: "https://www.youtube.com/@Princestory",
@@ -78,6 +118,9 @@ const creativeWork = [
     title: "Film Projects",
     description: "Selected film, production, and visual storytelling work.",
     image: contentCreation,
+    imageAlt: "Osama Orabi working on film and media production",
+    imageWidth: 1920,
+    imageHeight: 1280,
     imageClassName: "object-cover object-center",
     action: "View Projects",
     link: "https://drive.proton.me/urls/A8X4DDBHA4#Cpk40zTUb0h8",
@@ -86,6 +129,9 @@ const creativeWork = [
     title: "Commercial Appearances",
     description: "Selected on-camera and commercial work.",
     image: onCamera,
+    imageAlt: "Osama Orabi in selected commercial work",
+    imageWidth: 1600,
+    imageHeight: 886,
     imageClassName: "object-cover object-center",
     action: "View Work",
     link: "https://www.youtube.com/watch?v=PqdTSsAR6o8",
@@ -129,8 +175,11 @@ const Projects = () => {
                   <div className="aspect-[4/3] overflow-hidden md:aspect-auto md:h-96">
                     <img
                       src={venture.image}
-                      alt={`${venture.title} venture`}
+                      alt={venture.imageAlt}
+                      width={venture.imageWidth}
+                      height={venture.imageHeight}
                       loading="lazy"
+                      decoding="async"
                       className={`h-full w-full transition-transform duration-700 group-hover:scale-105 ${venture.imageClassName}`}
                     />
                   </div>
@@ -175,8 +224,11 @@ const Projects = () => {
                       <div className="aspect-[4/3] overflow-hidden">
                         <img
                           src={item.image}
-                          alt=""
+                          alt={item.imageAlt}
+                          width={item.imageWidth}
+                          height={item.imageHeight}
                           loading="lazy"
+                          decoding="async"
                           className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${item.imageClassName}`}
                         />
                       </div>
@@ -209,7 +261,7 @@ const Projects = () => {
             variant="outline"
             className="h-12 shrink-0 border-background/70 bg-transparent px-5 text-background hover:bg-background hover:text-foreground"
           >
-            <Link to="/business-representation">
+            <Link to="/business-representation/">
               Explore Business Representation
               <ArrowUpRight className="ml-2 h-4 w-4" />
             </Link>
@@ -224,7 +276,10 @@ const Projects = () => {
               <div className="h-44 overflow-hidden sm:h-auto sm:min-h-[420px]">
                 <img
                   src={selectedVenture.image}
-                  alt={`${selectedVenture.title} project`}
+                  alt={selectedVenture.imageAlt}
+                  width={selectedVenture.imageWidth}
+                  height={selectedVenture.imageHeight}
+                  decoding="async"
                   className={`h-full w-full ${selectedVenture.imageClassName}`}
                 />
               </div>
@@ -282,10 +337,19 @@ const Projects = () => {
         <DialogContent className="max-w-5xl overflow-hidden bg-neutral-950 p-0 text-white sm:rounded-xl">
           {selectedGallery?.gallery && (
             <div>
+              <DialogHeader className="sr-only">
+                <DialogTitle>{selectedGallery.title} project gallery</DialogTitle>
+                <DialogDescription>
+                  Selected images from the {selectedGallery.title} project.
+                </DialogDescription>
+              </DialogHeader>
               <div className="flex h-[54vh] min-h-[320px] items-center justify-center bg-neutral-950 p-4 sm:h-[66vh]">
                 <img
                   src={selectedGallery.gallery[galleryIndex]}
-                  alt={`${selectedGallery.title} gallery image ${galleryIndex + 1}`}
+                  alt={selectedGallery.galleryAlt[galleryIndex]}
+                  width={selectedGallery.galleryDimensions[galleryIndex].width}
+                  height={selectedGallery.galleryDimensions[galleryIndex].height}
+                  decoding="async"
                   className="h-full w-full object-contain"
                 />
               </div>

@@ -4,10 +4,13 @@ import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import PageSeo from "@/components/PageSeo";
+import { HOME_SEO, HOME_STRUCTURED_DATA } from "@/lib/seo";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <PageSeo {...HOME_SEO} structuredData={HOME_STRUCTURED_DATA} />
       <Header />
       <main>
         <Hero />

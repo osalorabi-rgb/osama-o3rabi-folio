@@ -154,7 +154,7 @@ const Contact = () => {
                 <Facebook className="h-6 w-6" />
               </a>
               <a
-                href="https://www.linkedin.com/in/o3rabi-b32479271/"
+                href="https://www.linkedin.com/in/osama-alorabi-b32479271/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
