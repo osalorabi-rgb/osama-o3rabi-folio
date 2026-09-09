@@ -63,7 +63,7 @@ const creativeWork = [
   {
     title: "Film Projects",
     description: "Selected film, production, and visual storytelling work.",
-    image: profileImage,
+    image: contentCreation,
     action: "View Projects",
     link: "https://drive.proton.me/urls/A8X4DDBHA4#Cpk40zTUb0h8",
   },
