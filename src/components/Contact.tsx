@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Facebook, Instagram, Linkedin, Mail, MessageCircle, Twitter, Youtube } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import ScrollAnimation from "./ScrollAnimation";
 
@@ -62,20 +62,6 @@ const Contact = () => {
             <p className="mx-auto max-w-xl font-sans text-lg text-muted-foreground">
               For business reviews, collaborations, or a direct conversation.
             </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <Button asChild className="h-12 bg-foreground px-6 text-background hover:bg-foreground/90">
-                <a href="https://wa.me/967772744377" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-4 w-4" />
-                  WhatsApp
-                </a>
-              </Button>
-              <Button asChild variant="outline" className="h-12 px-6">
-                <a href="mailto:osamaalorabi77@gmail.com">
-                  <Mail className="mr-2 h-4 w-4" />
-                  Email
-                </a>
-              </Button>
-            </div>
           </div>
         </ScrollAnimation>
 
