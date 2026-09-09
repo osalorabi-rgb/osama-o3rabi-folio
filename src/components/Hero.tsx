@@ -33,18 +33,19 @@ const Hero = () => {
             Entrepreneur & Content Creator
           </p>
 
-          <Button
-            asChild
-            variant="outline"
-            className="mt-8 border-white/60 bg-black/10 text-white backdrop-blur-sm hover:bg-white hover:text-foreground"
-          >
-            <Link to="/business-representation">
-              Business Representation
-              <ArrowUpRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
         </div>
       </ScrollAnimation>
+
+      <Button
+        asChild
+        variant="outline"
+        className="absolute bottom-20 right-6 z-10 h-11 border-white/60 bg-black/20 px-4 text-white backdrop-blur-sm hover:bg-white hover:text-foreground md:bottom-12 md:right-12"
+      >
+        <Link to="/business-representation">
+          Business Representation
+          <ArrowUpRight className="ml-2 h-4 w-4" />
+        </Link>
+      </Button>
 
       {/* Scroll indicator */}
       <div 

@@ -1,4 +1,13 @@
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { ArrowUpRight } from "lucide-react";
 import ScrollAnimation from "./ScrollAnimation";
 import ajjadImage from "@/assets/asom.jpg";
@@ -15,6 +24,9 @@ const ventures = [
     image: wahibImage,
     imageClassName: "object-contain bg-neutral-950 p-10 md:p-14",
     link: "https://getwahib.com/",
+    overview: "A social gifting platform that helps people share what they want and need, making it easier for others to choose the right gift.",
+    role: "Market research, product planning, MVP leadership, pitch development, and accelerator participation.",
+    highlights: ["MVP built in 45 days", "Top 35 team", "Create Apps Accelerator graduate"],
   },
   {
     title: "Ajjad",
@@ -22,6 +34,9 @@ const ventures = [
     image: ajjadImage,
     imageClassName: "object-cover",
     link: "https://ajjad.com/",
+    overview: "A fashion brand built and launched from the ground up, connecting positioning, digital presence, campaigns, and retail activation.",
+    role: "Brand strategy, launch planning, campaign direction, content systems, and execution oversight.",
+    highlights: ["36K+ reach", "65K+ impressions", "Organic market spread"],
   },
 ];
 
@@ -57,6 +72,8 @@ const creativeWork = [
 ];
 
 const Projects = () => {
+  const [selectedVenture, setSelectedVenture] = useState<(typeof ventures)[number] | null>(null);
+
   return (
     <section id="work" className="scroll-mt-24 bg-background px-6 py-16">
       <div className="container mx-auto max-w-7xl">
@@ -73,12 +90,11 @@ const Projects = () => {
         <div className="grid gap-8 md:grid-cols-2">
           {ventures.map((venture, index) => (
             <ScrollAnimation key={venture.title} delay={index * 0.12} direction={index === 0 ? "left" : "right"}>
-              <a
-                href={venture.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block h-full"
-                aria-label={`Visit ${venture.title}`}
+              <button
+                type="button"
+                onClick={() => setSelectedVenture(venture)}
+                className="group block h-full w-full text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4"
+                aria-label={`View ${venture.title} project details`}
               >
                 <Card className="flex h-full flex-col overflow-hidden border-2 border-border bg-card transition-all duration-500 hover:border-primary hover-lift">
                   <div className="h-72 overflow-hidden md:h-96">
@@ -99,7 +115,7 @@ const Projects = () => {
                     <ArrowUpRight className="h-6 w-6 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
                   </CardContent>
                 </Card>
-              </a>
+              </button>
             </ScrollAnimation>
           ))}
         </div>
@@ -151,6 +167,56 @@ const Projects = () => {
           </div>
         </div>
       </div>
+
+      <Dialog open={selectedVenture !== null} onOpenChange={(open) => !open && setSelectedVenture(null)}>
+        <DialogContent className="max-h-[90vh] max-w-3xl overflow-y-auto p-0 sm:rounded-xl">
+          {selectedVenture && (
+            <div className="sm:grid sm:grid-cols-[0.85fr_1.15fr]">
+              <div className="h-44 overflow-hidden sm:h-auto sm:min-h-[420px]">
+                <img
+                  src={selectedVenture.image}
+                  alt={`${selectedVenture.title} project`}
+                  className={`h-full w-full ${selectedVenture.imageClassName}`}
+                />
+              </div>
+              <div className="p-5 sm:p-6">
+                <DialogHeader className="text-left">
+                  <DialogTitle className="font-inter text-3xl font-bold sm:text-4xl">
+                    {selectedVenture.title}
+                  </DialogTitle>
+                  <DialogDescription className="pt-1 font-sans text-base leading-relaxed">
+                    {selectedVenture.overview}
+                  </DialogDescription>
+                </DialogHeader>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {selectedVenture.highlights.map((highlight) => (
+                    <div key={highlight} className="border border-border px-3 py-2 font-sans text-sm font-semibold">
+                      {highlight}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-5 border-l-2 border-foreground pl-5">
+                  <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                    My role
+                  </p>
+                  <p className="mt-2 font-sans leading-relaxed text-foreground">
+                    {selectedVenture.role}
+                  </p>
+                </div>
+
+                <Button asChild className="mt-6 h-11 bg-foreground px-5 text-background hover:bg-foreground/90">
+                  <a href={selectedVenture.link} target="_blank" rel="noopener noreferrer">
+                    Visit Project
+                    <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
