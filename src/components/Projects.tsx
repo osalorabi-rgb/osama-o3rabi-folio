@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import ScrollAnimation from "./ScrollAnimation";
 import ajjadImage from "@/assets/asom.jpg";
 import wahibImage from "@/assets/wahib.png";
-import profileImage from "@/assets/profile.jpg";
+import contentPerspectives from "@/assets/content-perspectives.jpg";
 import musicLabel from "@/assets/princestory-logo.jpg";
 import onCamera from "@/assets/on-camera.jpg";
 import contentCreation from "@/assets/content-creation.jpg";
@@ -33,7 +33,7 @@ const ventures = [
     title: "Wahib",
     description: "Social Gifting Platform",
     image: wahibImage,
-    imageClassName: "object-contain bg-neutral-950 p-10 md:p-14",
+    imageClassName: "object-contain bg-white p-10 md:p-14",
     link: "https://getwahib.com/",
     category: "Social Gifting Platform",
     overview: "A social gifting platform built around a simple problem: people want to give better gifts without guessing.",
@@ -46,7 +46,7 @@ const ventures = [
     title: "Ajjad",
     description: "E-commerce Fashion Brand",
     image: ajjadImage,
-    imageClassName: "object-cover",
+    imageClassName: "object-cover object-[center_38%]",
     link: "https://ajjad.com/",
     category: "E-commerce Fashion Brand",
     overview: "One of my first real business playgrounds.",
@@ -59,9 +59,10 @@ const ventures = [
 
 const creativeWork = [
   {
-    title: "Personal Brand",
+    title: "Content & Perspectives",
     description: "Content on business, entrepreneurship, branding, and marketing.",
-    image: null,
+    image: contentPerspectives,
+    imageClassName: "object-cover object-[center_62%]",
     action: "View Content",
     link: "https://www.instagram.com/o3rabi/",
   },
@@ -69,6 +70,7 @@ const creativeWork = [
     title: "PrinceStory",
     description: "Music distribution and creative support for independent artists.",
     image: musicLabel,
+    imageClassName: "object-contain bg-white p-6",
     action: "View Channel",
     link: "https://www.youtube.com/@Princestory",
   },
@@ -76,6 +78,7 @@ const creativeWork = [
     title: "Film Projects",
     description: "Selected film, production, and visual storytelling work.",
     image: contentCreation,
+    imageClassName: "object-cover object-center",
     action: "View Projects",
     link: "https://drive.proton.me/urls/A8X4DDBHA4#Cpk40zTUb0h8",
   },
@@ -83,6 +86,7 @@ const creativeWork = [
     title: "Commercial Appearances",
     description: "Selected on-camera and commercial work.",
     image: onCamera,
+    imageClassName: "object-cover object-center",
     action: "View Work",
     link: "https://www.youtube.com/watch?v=PqdTSsAR6o8",
   },
@@ -122,7 +126,7 @@ const Projects = () => {
                 aria-label={`View ${venture.title} project details`}
               >
                 <Card className="flex h-full flex-col overflow-hidden border-2 border-border bg-card transition-all duration-500 hover:border-primary hover-lift">
-                  <div className="h-72 overflow-hidden md:h-96">
+                  <div className="aspect-[4/3] overflow-hidden md:aspect-auto md:h-96">
                     <img
                       src={venture.image}
                       alt={`${venture.title} venture`}
@@ -168,12 +172,12 @@ const Projects = () => {
                 >
                   <Card className="flex h-full flex-col overflow-hidden border border-border bg-card transition-colors hover:border-foreground/50">
                     {item.image && (
-                      <div className="h-44 overflow-hidden">
+                      <div className="aspect-[4/3] overflow-hidden">
                         <img
                           src={item.image}
                           alt=""
                           loading="lazy"
-                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${item.imageClassName}`}
                         />
                       </div>
                     )}
@@ -275,18 +279,34 @@ const Projects = () => {
       </Dialog>
 
       <Dialog open={selectedGallery !== null} onOpenChange={(open) => !open && setSelectedGallery(null)}>
-        <DialogContent className="max-w-5xl overflow-hidden bg-neutral-950 p-0 text-white sm:rounded-xl">
+        <DialogContent
+          className={`max-w-5xl overflow-hidden p-0 sm:rounded-xl ${
+            selectedGallery?.title === "Wahib" ? "bg-white text-foreground" : "bg-neutral-950 text-white"
+          }`}
+        >
           {selectedGallery?.gallery && (
             <div>
-              <div className="flex h-[54vh] min-h-[320px] items-center justify-center bg-neutral-950 p-4 sm:h-[66vh]">
+              <div
+                className={`flex h-[54vh] min-h-[320px] items-center justify-center p-4 sm:h-[66vh] ${
+                  selectedGallery.title === "Wahib" ? "bg-white" : "bg-neutral-950"
+                }`}
+              >
                 <img
                   src={selectedGallery.gallery[galleryIndex]}
                   alt={`${selectedGallery.title} gallery image ${galleryIndex + 1}`}
                   className="h-full w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-between border-t border-white/15 px-5 py-4 sm:px-7">
-                <p className="font-sans text-sm text-white/70">
+              <div
+                className={`flex items-center justify-between border-t px-5 py-4 sm:px-7 ${
+                  selectedGallery.title === "Wahib" ? "border-border" : "border-white/15"
+                }`}
+              >
+                <p
+                  className={`font-sans text-sm ${
+                    selectedGallery.title === "Wahib" ? "text-muted-foreground" : "text-white/70"
+                  }`}
+                >
                   {galleryIndex + 1} / {selectedGallery.gallery.length}
                 </p>
                 <div className="flex gap-2">
@@ -294,7 +314,11 @@ const Projects = () => {
                     type="button"
                     variant="outline"
                     size="icon"
-                    className="border-white/30 bg-transparent text-white hover:bg-white hover:text-neutral-950"
+                    className={
+                      selectedGallery.title === "Wahib"
+                        ? "border-border bg-transparent text-foreground hover:bg-foreground hover:text-background"
+                        : "border-white/30 bg-transparent text-white hover:bg-white hover:text-neutral-950"
+                    }
                     aria-label="Previous gallery image"
                     onClick={() => setGalleryIndex((index) => (index - 1 + selectedGallery.gallery.length) % selectedGallery.gallery.length)}
                   >
@@ -304,7 +328,11 @@ const Projects = () => {
                     type="button"
                     variant="outline"
                     size="icon"
-                    className="border-white/30 bg-transparent text-white hover:bg-white hover:text-neutral-950"
+                    className={
+                      selectedGallery.title === "Wahib"
+                        ? "border-border bg-transparent text-foreground hover:bg-foreground hover:text-background"
+                        : "border-white/30 bg-transparent text-white hover:bg-white hover:text-neutral-950"
+                    }
                     aria-label="Next gallery image"
                     onClick={() => setGalleryIndex((index) => (index + 1) % selectedGallery.gallery.length)}
                   >
