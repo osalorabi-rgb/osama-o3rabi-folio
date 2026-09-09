@@ -20,23 +20,27 @@ import contentCreation from "@/assets/content-creation.jpg";
 const ventures = [
   {
     title: "Wahib",
-    description: "Product development and MVP launch.",
+    description: "Social Gifting Platform",
     image: wahibImage,
     imageClassName: "object-contain bg-neutral-950 p-10 md:p-14",
     link: "https://getwahib.com/",
-    overview: "A social gifting platform that helps people share what they want and need, making it easier for others to choose the right gift.",
-    role: "Market research, product planning, MVP leadership, pitch development, and accelerator participation.",
-    highlights: ["MVP built in 45 days", "Top 35 team", "Create Apps Accelerator graduate"],
+    category: "Social Gifting Platform",
+    overview: "A social gifting platform built around a simple problem: people want to give better gifts without guessing.",
+    role: "Wahib lets people share what they genuinely want or need, while friends and family can coordinate gifts privately.",
+    note: "Currently being developed for the GCC market.",
+    highlights: ["Top 36 High-Potential Team - Create Apps Championship + Accelerator"],
   },
   {
     title: "Ajjad",
-    description: "Brand launch, growth and activation.",
+    description: "E-commerce Fashion Brand",
     image: ajjadImage,
     imageClassName: "object-cover",
     link: "https://ajjad.com/",
-    overview: "A fashion brand built and launched from the ground up, connecting positioning, digital presence, campaigns, and retail activation.",
-    role: "Brand strategy, launch planning, campaign direction, content systems, and execution oversight.",
-    highlights: ["36K+ reach", "65K+ impressions", "Organic market spread"],
+    category: "E-commerce Fashion Brand",
+    overview: "One of my first real business playgrounds.",
+    role: "I built Ajjad through product, branding, marketing, content, customer experience, and day-to-day operations.",
+    note: "More than a fashion brand, it became where I learned what business actually looks like outside PowerPoint slides.",
+    highlights: [],
   },
 ];
 
@@ -184,31 +188,30 @@ const Projects = () => {
                   <DialogTitle className="font-inter text-3xl font-bold sm:text-4xl">
                     {selectedVenture.title}
                   </DialogTitle>
-                  <DialogDescription className="pt-1 font-sans text-base leading-relaxed">
-                    {selectedVenture.overview}
+                  <DialogDescription className="pt-1 font-sans text-base font-semibold leading-relaxed text-foreground">
+                    {selectedVenture.category}
                   </DialogDescription>
                 </DialogHeader>
 
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {selectedVenture.highlights.map((highlight) => (
-                    <div key={highlight} className="border border-border px-3 py-2 font-sans text-sm font-semibold">
-                      {highlight}
-                    </div>
-                  ))}
+                <div className="mt-6 space-y-4 font-sans leading-relaxed text-foreground">
+                  <p>{selectedVenture.overview}</p>
+                  <p>{selectedVenture.role}</p>
+                  <p className="text-muted-foreground">{selectedVenture.note}</p>
                 </div>
 
-                <div className="mt-5 border-l-2 border-foreground pl-5">
-                  <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                    My role
-                  </p>
-                  <p className="mt-2 font-sans leading-relaxed text-foreground">
-                    {selectedVenture.role}
-                  </p>
-                </div>
+                {selectedVenture.highlights.length > 0 && (
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {selectedVenture.highlights.map((highlight) => (
+                      <div key={highlight} className="border border-border px-3 py-2 font-sans text-sm font-semibold">
+                        {highlight}
+                      </div>
+                    ))}
+                  </div>
+                )}
 
                 <Button asChild className="mt-6 h-11 bg-foreground px-5 text-background hover:bg-foreground/90">
                   <a href={selectedVenture.link} target="_blank" rel="noopener noreferrer">
-                    Visit Project
+                    Explore {selectedVenture.title}
                     <ArrowUpRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>

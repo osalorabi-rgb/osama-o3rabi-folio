@@ -63,18 +63,18 @@ const Header = () => {
               Home
             </Button>
             <Button
-              asChild
-              variant="ghost"
-              className="text-foreground hover:bg-transparent hover:opacity-70 transition-opacity"
-            >
-              <Link to="/business-representation">Business Representation</Link>
-            </Button>
-            <Button
               variant="ghost"
               onClick={() => scrollToSection("work")}
               className="text-foreground hover:bg-transparent hover:opacity-70 transition-opacity"
             >
               Work
+            </Button>
+            <Button
+              asChild
+              variant="ghost"
+              className="text-foreground hover:bg-transparent hover:opacity-70 transition-opacity"
+            >
+              <Link to="/business-representation">Business Representation</Link>
             </Button>
             <Button
               variant="ghost"
@@ -111,6 +111,13 @@ const Header = () => {
               Home
             </Button>
             <Button
+              variant="ghost"
+              onClick={() => scrollToSection("work")}
+              className="w-full justify-start text-base h-12 hover:bg-secondary"
+            >
+              Work
+            </Button>
+            <Button
               asChild
               variant="ghost"
               className="w-full justify-start text-base h-12 hover:bg-secondary"
@@ -118,13 +125,6 @@ const Header = () => {
               <Link to="/business-representation" onClick={() => setIsMobileMenuOpen(false)}>
                 Business Representation
               </Link>
-            </Button>
-            <Button
-              variant="ghost"
-              onClick={() => scrollToSection("work")}
-              className="w-full justify-start text-base h-12 hover:bg-secondary"
-            >
-              Work
             </Button>
             <Button
               variant="ghost"
