@@ -33,7 +33,7 @@ const ventures = [
     title: "Wahib",
     description: "Social Gifting Platform",
     image: wahibImage,
-    imageClassName: "object-contain bg-white p-10 md:p-14",
+    imageClassName: "object-contain bg-neutral-950 p-10 md:p-14",
     link: "https://getwahib.com/",
     category: "Social Gifting Platform",
     overview: "A social gifting platform built around a simple problem: people want to give better gifts without guessing.",
@@ -59,8 +59,8 @@ const ventures = [
 
 const creativeWork = [
   {
-    title: "Content & Perspectives",
-    description: "Content on business, entrepreneurship, branding, and marketing.",
+    title: "Business Content",
+    description: "Content on business, entrepreneurship, and marketing.",
     image: contentPerspectives,
     imageClassName: "object-cover object-[center_62%]",
     action: "View Content",
@@ -68,7 +68,7 @@ const creativeWork = [
   },
   {
     title: "PrinceStory",
-    description: "Music distribution and creative support for independent artists.",
+    description: "Music distribution and support for independent artists.",
     image: musicLabel,
     imageClassName: "object-contain bg-white p-6",
     action: "View Channel",
@@ -279,34 +279,18 @@ const Projects = () => {
       </Dialog>
 
       <Dialog open={selectedGallery !== null} onOpenChange={(open) => !open && setSelectedGallery(null)}>
-        <DialogContent
-          className={`max-w-5xl overflow-hidden p-0 sm:rounded-xl ${
-            selectedGallery?.title === "Wahib" ? "bg-white text-foreground" : "bg-neutral-950 text-white"
-          }`}
-        >
+        <DialogContent className="max-w-5xl overflow-hidden bg-neutral-950 p-0 text-white sm:rounded-xl">
           {selectedGallery?.gallery && (
             <div>
-              <div
-                className={`flex h-[54vh] min-h-[320px] items-center justify-center p-4 sm:h-[66vh] ${
-                  selectedGallery.title === "Wahib" ? "bg-white" : "bg-neutral-950"
-                }`}
-              >
+              <div className="flex h-[54vh] min-h-[320px] items-center justify-center bg-neutral-950 p-4 sm:h-[66vh]">
                 <img
                   src={selectedGallery.gallery[galleryIndex]}
                   alt={`${selectedGallery.title} gallery image ${galleryIndex + 1}`}
                   className="h-full w-full object-contain"
                 />
               </div>
-              <div
-                className={`flex items-center justify-between border-t px-5 py-4 sm:px-7 ${
-                  selectedGallery.title === "Wahib" ? "border-border" : "border-white/15"
-                }`}
-              >
-                <p
-                  className={`font-sans text-sm ${
-                    selectedGallery.title === "Wahib" ? "text-muted-foreground" : "text-white/70"
-                  }`}
-                >
+              <div className="flex items-center justify-between border-t border-white/15 px-5 py-4 sm:px-7">
+                <p className="font-sans text-sm text-white/70">
                   {galleryIndex + 1} / {selectedGallery.gallery.length}
                 </p>
                 <div className="flex gap-2">
@@ -314,11 +298,7 @@ const Projects = () => {
                     type="button"
                     variant="outline"
                     size="icon"
-                    className={
-                      selectedGallery.title === "Wahib"
-                        ? "border-border bg-transparent text-foreground hover:bg-foreground hover:text-background"
-                        : "border-white/30 bg-transparent text-white hover:bg-white hover:text-neutral-950"
-                    }
+                    className="border-white/30 bg-transparent text-white hover:bg-white hover:text-neutral-950"
                     aria-label="Previous gallery image"
                     onClick={() => setGalleryIndex((index) => (index - 1 + selectedGallery.gallery.length) % selectedGallery.gallery.length)}
                   >
@@ -328,11 +308,7 @@ const Projects = () => {
                     type="button"
                     variant="outline"
                     size="icon"
-                    className={
-                      selectedGallery.title === "Wahib"
-                        ? "border-border bg-transparent text-foreground hover:bg-foreground hover:text-background"
-                        : "border-white/30 bg-transparent text-white hover:bg-white hover:text-neutral-950"
-                    }
+                    className="border-white/30 bg-transparent text-white hover:bg-white hover:text-neutral-950"
                     aria-label="Next gallery image"
                     onClick={() => setGalleryIndex((index) => (index + 1) % selectedGallery.gallery.length)}
                   >
