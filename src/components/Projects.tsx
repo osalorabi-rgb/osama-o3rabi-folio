@@ -21,6 +21,11 @@ import wahibGraduation from "@/assets/wahib-gallery/wahib-graduation.png";
 import wahibProduct from "@/assets/wahib-gallery/wahib-product.png";
 import wahibApps from "@/assets/wahib-gallery/wahib-apps.jpg";
 import wahibPress from "@/assets/wahib-gallery/wahib-press.png";
+import ajjadProduct from "@/assets/ajjad-gallery/ajjad-product.jpg";
+import ajjadPackaging from "@/assets/ajjad-gallery/ajjad-packaging.jpg";
+import ajjadFounders from "@/assets/ajjad-gallery/ajjad-founders.jpg";
+import ajjadRetail from "@/assets/ajjad-gallery/ajjad-retail.jpg";
+import ajjadActivation from "@/assets/ajjad-gallery/ajjad-activation.jpg";
 
 const ventures = [
   {
@@ -47,6 +52,7 @@ const ventures = [
     role: "I built Ajjad through product, branding, marketing, content, customer experience, and day-to-day operations.",
     note: "More than a fashion brand, it became where I learned what business actually looks like outside PowerPoint slides.",
     highlights: [],
+    gallery: [ajjadProduct, ajjadPackaging, ajjadFounders, ajjadRetail, ajjadActivation],
   },
 ];
 
