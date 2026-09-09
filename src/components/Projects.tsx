@@ -8,7 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { ArrowUpRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import ScrollAnimation from "./ScrollAnimation";
 import ajjadImage from "@/assets/asom.jpg";
@@ -17,6 +17,10 @@ import profileImage from "@/assets/profile.jpg";
 import musicLabel from "@/assets/princestory-logo.jpg";
 import onCamera from "@/assets/on-camera.jpg";
 import contentCreation from "@/assets/content-creation.jpg";
+import wahibGraduation from "@/assets/wahib-gallery/wahib-graduation.png";
+import wahibProduct from "@/assets/wahib-gallery/wahib-product.png";
+import wahibApps from "@/assets/wahib-gallery/wahib-apps.jpg";
+import wahibPress from "@/assets/wahib-gallery/wahib-press.png";
 
 const ventures = [
   {
@@ -30,6 +34,7 @@ const ventures = [
     role: "Wahib lets people share what they genuinely want or need, while friends and family can coordinate gifts privately.",
     note: "Currently being developed for the GCC market.",
     highlights: ["Top 36 High-Potential Team - Create Apps Championship + Accelerator"],
+    gallery: [wahibGraduation, wahibProduct, wahibApps, wahibPress],
   },
   {
     title: "Ajjad",
@@ -78,6 +83,14 @@ const creativeWork = [
 
 const Projects = () => {
   const [selectedVenture, setSelectedVenture] = useState<(typeof ventures)[number] | null>(null);
+  const [selectedGallery, setSelectedGallery] = useState<(typeof ventures)[number] | null>(null);
+  const [galleryIndex, setGalleryIndex] = useState(0);
+
+  const openGallery = (venture: (typeof ventures)[number]) => {
+    setSelectedVenture(null);
+    setGalleryIndex(0);
+    setSelectedGallery(venture);
+  };
 
   return (
     <section id="work" className="scroll-mt-24 bg-background px-6 py-16">
@@ -230,12 +243,67 @@ const Projects = () => {
                   </div>
                 )}
 
-                <Button asChild className="mt-6 h-11 bg-foreground px-5 text-background hover:bg-foreground/90">
-                  <a href={selectedVenture.link} target="_blank" rel="noopener noreferrer">
-                    Explore {selectedVenture.title}
-                    <ArrowUpRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Button asChild className="h-11 bg-foreground px-5 text-background hover:bg-foreground/90">
+                    <a href={selectedVenture.link} target="_blank" rel="noopener noreferrer">
+                      Explore {selectedVenture.title}
+                      <ArrowUpRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                  {selectedVenture.gallery && (
+                    <Button
+                      type="button"
+                      variant="outline"
+                      className="h-11 px-5"
+                      onClick={() => openGallery(selectedVenture)}
+                    >
+                      View Gallery
+                    </Button>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={selectedGallery !== null} onOpenChange={(open) => !open && setSelectedGallery(null)}>
+        <DialogContent className="max-w-5xl overflow-hidden bg-neutral-950 p-0 text-white sm:rounded-xl">
+          {selectedGallery?.gallery && (
+            <div>
+              <div className="flex h-[54vh] min-h-[320px] items-center justify-center bg-neutral-950 p-4 sm:h-[66vh]">
+                <img
+                  src={selectedGallery.gallery[galleryIndex]}
+                  alt={`${selectedGallery.title} gallery image ${galleryIndex + 1}`}
+                  className="h-full w-full object-contain"
+                />
+              </div>
+              <div className="flex items-center justify-between border-t border-white/15 px-5 py-4 sm:px-7">
+                <p className="font-sans text-sm text-white/70">
+                  {galleryIndex + 1} / {selectedGallery.gallery.length}
+                </p>
+                <div className="flex gap-2">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="icon"
+                    className="border-white/30 bg-transparent text-white hover:bg-white hover:text-neutral-950"
+                    aria-label="Previous gallery image"
+                    onClick={() => setGalleryIndex((index) => (index - 1 + selectedGallery.gallery.length) % selectedGallery.gallery.length)}
+                  >
+                    <ChevronLeft className="h-5 w-5" />
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="icon"
+                    className="border-white/30 bg-transparent text-white hover:bg-white hover:text-neutral-950"
+                    aria-label="Next gallery image"
+                    onClick={() => setGalleryIndex((index) => (index + 1) % selectedGallery.gallery.length)}
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </Button>
+                </div>
               </div>
             </div>
           )}
