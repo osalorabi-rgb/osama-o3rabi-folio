@@ -53,7 +53,7 @@ const ventures = [
     role: "I built Ajjad through product, branding, marketing, content, customer experience, and day-to-day operations.",
     note: "More than a fashion brand, it became where I learned what business actually looks like outside PowerPoint slides.",
     highlights: [],
-    gallery: [ajjadRetail, ajjadProduct, ajjadPackaging, ajjadFounders, ajjadActivation, ajjadBag],
+    gallery: [ajjadFounders, ajjadProduct, ajjadPackaging, ajjadRetail, ajjadActivation, ajjadBag],
   },
 ];
 
