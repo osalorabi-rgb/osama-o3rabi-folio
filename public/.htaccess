@@ -1,0 +1,16 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+
+# Keep one canonical host and protocol for search engines and shared links.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.o3rabi\.com$ [NC]
+RewriteRule ^ https://o3rabi.com%{REQUEST_URI} [R=301,L,NE]
+
+# Serve generated files and public page directories directly.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Let React Router handle unknown application routes.
+RewriteRule ^ index.html [L]
